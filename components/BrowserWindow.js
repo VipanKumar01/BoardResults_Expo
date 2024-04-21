@@ -1,18 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WebView } from 'react-native-webview';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ActivityIndicator, View, StyleSheet } from 'react-native';
 
-function BrowserWindow(props) {
-  console.log(props.route.params);
-  // take url as props and set in uri
+function BrowserWindow({ route }) {
+  const [isLoading, setIsLoading] = useState(true);
 
-  // and  handle navigation state changes to update the title of the window.
+  const onLoadStart = () => {
+    setIsLoading(true); // Show the loader when the WebView starts loading
+  };
+
+  const onLoadEnd = () => {
+    setIsLoading(false); // Hide the loader when the WebView finishes loading
+  };
+
   return (
-    <WebView
-      source={{ uri: props.route.params }}
-      style={{ flex: 1 }}
-    />
+    <SafeAreaView style={{ flex: 1 }}>
+      <WebView
+        source={{ uri: route.params }}
+        style={{ flex: 1 }}
+        onLoadStart={onLoadStart}
+        onLoadEnd={onLoadEnd}
+      />
+      {isLoading && (
+        <View style={styles.loader}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  loader: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Add some transparency
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default BrowserWindow;

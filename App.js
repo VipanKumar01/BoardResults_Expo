@@ -1,30 +1,33 @@
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import 'react-native-gesture-handler';
+import React, { useCallback } from 'react';
+import { Text, SafeAreaView, StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-import { Card } from 'react-native-paper';
-
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
-import CardBoards from './components/Cards';
-import HomeScreen from './components/Home';
 import BrowserWindow from './components/BrowserWindow';
 import ChooseBoardScreen from './components/ChooseBoardScreen';
+import CardBoards from './components/Cards';
 
 export default function App() {
+  const reloadData = useCallback(() => {
+    // Implement your logic to reload data here
+    // For example, you can call an API again or update state variables
+    console.log("Data reloaded");
+  }, []);
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='CardBoards'>
-        <Stack.Screen name="CardBoards" component={CardBoards} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="BrowserWindow" component={BrowserWindow} />
-        <Stack.Screen name="ChooseBoardScreen" component={ChooseBoardScreen} />
+      <Stack.Navigator initialRouteName='All Boards'>
+        <Stack.Screen name="All Boards" component={CardBoards} />
+        <Stack.Screen name="Result" component={BrowserWindow} />
+        <Stack.Screen name="Check Result" component={ChooseBoardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
 
 // <SafeAreaView style={styles.container}>
 //   <CardBoards />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   View,
@@ -8,14 +8,35 @@ import {
   SafeAreaView,
   StatusBar,
   FlatList,
+  TextInput,
 } from 'react-native';
 import statesData from '../assets/HomeCard';
+import TestData from '../assets/test1';
 
 function CardBoards({ navigation }) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortedData, setSortedData] = useState(TestData);
+
+  const handleSearch = (text) => {
+    const filteredData = TestData.filter((item) =>
+      item.name.toLowerCase().includes(text.toLowerCase())
+    );
+    setSortedData(filteredData);
+    setSearchQuery(text);
+  };
+
   return (
     <SafeAreaView style={style.SafeAreacontainer}>
+      <View style={style.searchContainer}>
+        <TextInput
+          style={style.searchInput}
+          placeholder="Search by Board name"
+          value={searchQuery}
+          onChangeText={handleSearch}
+        />
+      </View>
       <FlatList
-        data={statesData}
+        data={sortedData}
         renderItem={({ item, index }) => (
           <View>
             <View key={index}>
@@ -28,7 +49,9 @@ function CardBoards({ navigation }) {
                   </View>
                 </View>
 
-                <TouchableHighlight style={style.touchableStyle} onPress={() => navigation.navigate('ChooseBoardScreen', item.resultWebsiteLink)}>
+                <TouchableHighlight
+                  style={style.touchableStyle}
+                  onPress={() => navigation.navigate('Check Result', item)}>
                   <Text style={{ color: 'white' }}>Open</Text>
                 </TouchableHighlight>
               </View>
@@ -45,21 +68,29 @@ function CardBoards({ navigation }) {
     </SafeAreaView>
   );
 }
+
 const style = StyleSheet.create({
   SafeAreacontainer: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+  },
+  searchContainer: {
+    padding: 10,
+  },
+  searchInput: {
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 50,
+    paddingHorizontal: 10,
   },
   touchableStyle: {
     backgroundColor: 'purple',
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
-    borderColor: 'green',
     padding: 10,
     height: 40,
   },
   container: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#fff',
     flexDirection: 'row',
     padding: 10,
     paddingLeft: 15,
@@ -86,13 +117,6 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 15,
   },
-  touchableStyle: {
-    backgroundColor: 'purple',
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
-    borderColor: 'green',
-    padding: 10,
-    height: 40,
-  },
 });
+
 export default CardBoards;
