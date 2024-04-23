@@ -9,6 +9,7 @@ const Stack = createNativeStackNavigator();
 import BrowserWindow from './components/BrowserWindow';
 import ChooseBoardScreen from './components/ChooseBoardScreen';
 import CardBoards from './components/Cards';
+import MyDrawer from './components/Drawer/DrawerComponent';
 
 export default function App() {
   const reloadData = useCallback(() => {

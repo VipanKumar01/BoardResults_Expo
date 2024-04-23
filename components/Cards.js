@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import statesData from '../assets/HomeCard';
 import TestData from '../assets/test1';
+import newGif from '../assets/new.gif';
 
 function CardBoards({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -44,7 +45,10 @@ function CardBoards({ navigation }) {
                 <View style={{ flexDirection: 'row' }}>
                   <Image source={item.imageUrl} style={style.imgStyle} />
                   <View style={style.contentStyle}>
-                    <Text style={style.titleStyle}>{item.name}</Text>
+                    <View style={style.titleRow}>
+                      <Text style={style.titleStyle}>{item.name}</Text>
+                      {item.isNew ? <Image source={newGif} style={style.newGif} /> : <Text></Text>}
+                    </View>
                     <Text style={style.dateStyle}>Date - {item.date}</Text>
                   </View>
                 </View>
@@ -104,6 +108,12 @@ const style = StyleSheet.create({
     height: 75,
     borderRadius: 50,
   },
+  titleRow: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8
+  },
   titleStyle: {
     color: '#111',
     fontWeight: '900',
@@ -117,6 +127,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 15,
   },
+
 });
 
 export default CardBoards;

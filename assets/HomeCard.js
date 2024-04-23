@@ -39,6 +39,7 @@ export default statesData = [
     imageUrl: Andhra_Pradesh,
     link: '#',
     date: '01/03/2024',
+    isNew: true,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -50,6 +51,7 @@ export default statesData = [
     imageUrl: Arunachal_Pradesh,
     link: '#',
     date: '01/03/2024',
+    isNew: true,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -61,6 +63,7 @@ export default statesData = [
     imageUrl: Assam,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -72,6 +75,7 @@ export default statesData = [
     imageUrl: Bihar,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -83,6 +87,7 @@ export default statesData = [
     imageUrl: Chhattisgrah,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -94,6 +99,7 @@ export default statesData = [
     imageUrl: Goa,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -105,6 +111,7 @@ export default statesData = [
     imageUrl: Gujarat,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -116,6 +123,7 @@ export default statesData = [
     imageUrl: Haryana,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -127,6 +135,7 @@ export default statesData = [
     imageUrl: Himachal,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -138,6 +147,7 @@ export default statesData = [
     imageUrl: Jharkhand,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -149,6 +159,7 @@ export default statesData = [
     imageUrl: Karnataka,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -160,6 +171,7 @@ export default statesData = [
     imageUrl: Kerala,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -171,6 +183,7 @@ export default statesData = [
     imageUrl: Madhya,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -182,6 +195,7 @@ export default statesData = [
     imageUrl: Maharashtra,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -193,6 +207,7 @@ export default statesData = [
     imageUrl: Manipur,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -204,6 +219,7 @@ export default statesData = [
     imageUrl: Megha,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -215,6 +231,7 @@ export default statesData = [
     imageUrl: Mizoram,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -226,6 +243,7 @@ export default statesData = [
     imageUrl: Nagaland,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -237,6 +255,7 @@ export default statesData = [
     imageUrl: Odisha,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -248,6 +267,7 @@ export default statesData = [
     imageUrl: Punjab,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -259,6 +279,7 @@ export default statesData = [
     imageUrl: Raj,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -270,6 +291,7 @@ export default statesData = [
     imageUrl: Sikkim,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -281,6 +303,7 @@ export default statesData = [
     imageUrl: Tamil,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -292,6 +315,7 @@ export default statesData = [
     imageUrl: Telangana,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -303,6 +327,7 @@ export default statesData = [
     imageUrl: Tripura,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -314,6 +339,7 @@ export default statesData = [
     imageUrl: UK,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -325,6 +351,7 @@ export default statesData = [
     imageUrl: Uttar_Pradesh,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -336,6 +363,7 @@ export default statesData = [
     imageUrl: WB,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -347,6 +375,7 @@ export default statesData = [
     imageUrl: CBSE,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -358,6 +387,7 @@ export default statesData = [
     imageUrl: ISC,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -369,6 +399,7 @@ export default statesData = [
     imageUrl: JK,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -380,6 +411,7 @@ export default statesData = [
     imageUrl: NIOS,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',
@@ -391,6 +423,7 @@ export default statesData = [
     imageUrl: RSOS,
     link: '#',
     date: '01/03/2024',
+    isNew: false,
     resultWebsiteLink: {
       tenth: 'https://www.npmjs.com/',
       twelfth: 'https://www.npmjs.com/products/pro',

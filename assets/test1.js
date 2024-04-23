@@ -41,6 +41,7 @@ export default TestData = [
         imageUrl: Andhra_Pradesh,
         link: '#',
         date: '01/03/2024',
+        isNew: true,
         resultWebsiteLink: {
             tenth: 'http://ap-ssc-result.indiaresults.com/ap/bseap/class-10-exam-result-2022/query.htm',
             twelfth: 'http://ap-inter-2nd-year-result.indiaresults.com/ap/bieap/intermediate-2-year-gen-exam-result-2022/query.htm',
@@ -52,6 +53,7 @@ export default TestData = [
         imageUrl: Arunachal_Pradesh,
         link: '#',
         date: '01/03/2024',
+        isNew: true,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -63,6 +65,7 @@ export default TestData = [
         imageUrl: Assam,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'http://assam-hslc-result.indiaresults.com/as/seba/class-10-hslc-exam-result-2022/query.htm',
             twelfth: 'http://assam-12th-result.indiaresults.com/as/ahsec/class-12th-exam-result-2022/query.htm',
@@ -74,6 +77,7 @@ export default TestData = [
         imageUrl: Bihar,
         link: '#',
         date: '01/03/2024',
+        isNew: true,
         resultWebsiteLink: {
             tenth: 'http://bihar-10th-result.indiaresults.com/br/bseb/class-10-exam-result-2022/query.htm',
             twelfth: 'http://results.biharboardonline.com/seniorsecondary22',
@@ -85,6 +89,7 @@ export default TestData = [
         imageUrl: Chhattisgrah,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://vidia.cgbse.nic.in/2022results/X_Main22.aspx',
             twelfth: 'https://vidia.cgbse.nic.in/2022results/Xii_Main22.aspx',
@@ -96,6 +101,7 @@ export default TestData = [
         imageUrl: Goa,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://results.gbshsegoa.net/#/home',
             twelfth: 'https://results.gbshsegoa.net/#/home',
@@ -107,6 +113,7 @@ export default TestData = [
         imageUrl: Gujarat,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -118,6 +125,7 @@ export default TestData = [
         imageUrl: Haryana,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -129,6 +137,7 @@ export default TestData = [
         imageUrl: Himachal,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             eighth: 'https://www.hpbose.org/Result/SOSMiddleFullReAppSep2022.aspx?E=2',
             tenth: 'https://www.hpbose.org/Result/MainMatric2023.aspx?E=2',
@@ -141,6 +150,7 @@ export default TestData = [
         imageUrl: Jharkhand,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'http://jac-10th-result.indiaresults.com/jh/jacranchi/class-10th-exam-result-2022/query.htm',
             twelfth: 'https://www.jacresults.com/commerce/index.php',
@@ -152,6 +162,7 @@ export default TestData = [
         imageUrl: Karnataka,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://kseeb.karnataka.gov.in/sslcresults2023/',
             twelfth: 'https://karresults.nic.in/slpusuppsecond.asp',
@@ -163,6 +174,7 @@ export default TestData = [
         imageUrl: Kerala,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://keralaresults.nic.in/dhsefyimpeqnov23klx/dhsefyeq.htm',
             twelfth: 'https://keralaresults.nic.in/dhse23mbs2319/dhse.htm',
@@ -174,6 +186,7 @@ export default TestData = [
         imageUrl: Madhya,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://mpresults.nic.in/mpbse/hsc10_2023/X_class_23.htm',
             twelfth: 'https://mpresults.nic.in/mpbse/HSSC12_23/HSSC_2023-XII.htm',
@@ -185,6 +198,7 @@ export default TestData = [
         imageUrl: Maharashtra,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://mahresult.nic.in/sscmarch2022/sscmarch2022.htm',
             twelfth: 'https://mahresult.nic.in/mbhsc2022/mbhsc2022.htm',
@@ -196,6 +210,7 @@ export default TestData = [
         imageUrl: Manipur,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://manresults.nic.in/hslccomp/index.htm',
             tenth_sec: 'https://manresults.nic.in/hslc/index.htm',
@@ -209,6 +224,7 @@ export default TestData = [
         imageUrl: Megha,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.megresults.nic.in/sslc.htm',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -220,6 +236,7 @@ export default TestData = [
         imageUrl: Mizoram,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'http://mizoram.indiaresults.com/mbse/default.aspx',
             twelfth: 'http://mizoram.indiaresults.com/mbse/default.aspx',
@@ -231,6 +248,7 @@ export default TestData = [
         imageUrl: Nagaland,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -242,6 +260,7 @@ export default TestData = [
         imageUrl: Odisha,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -253,6 +272,7 @@ export default TestData = [
         imageUrl: Punjab,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -264,6 +284,7 @@ export default TestData = [
         imageUrl: Raj,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -275,6 +296,7 @@ export default TestData = [
         imageUrl: Sikkim,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -286,6 +308,7 @@ export default TestData = [
         imageUrl: Tamil,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://tnresults.nic.in/tpfpecrd.htm',
             twelfth: 'https://tnresults.nic.in/tpexter.htm',
@@ -297,6 +320,7 @@ export default TestData = [
         imageUrl: Telangana,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://bse.telangana.gov.in/Resultsaprthr/',
             tenth_sec: 'http://ts-ssc-results.indiaresults.com/tg/bse-telangana/class-10-exam-result-2022/query.htm',
@@ -309,6 +333,7 @@ export default TestData = [
         imageUrl: Tripura,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://tnresults.nic.in/tpfpecrd.htm',
             twelfth: 'https://tnresults.nic.in/tpexter.htm',
@@ -320,6 +345,7 @@ export default TestData = [
         imageUrl: UK,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://uaresults.nic.in/',
             tenth_sec: 'http://uk-board-10th-result.indiaresults.com/ut/ubse/class-10-exam-result-2022/query.htm',
@@ -334,6 +360,7 @@ export default TestData = [
         imageUrl: Uttar_Pradesh,
         link: '#',
         date: '01/03/2024',
+        isNew: true,
         resultWebsiteLink: {
             tenth: 'http://up-board-10th-result.indiaresults.com/up/upmsp/class-10th-exam-result-2022/query.htm',
             twelfth: 'http://up-board-10th-result.indiaresults.com/up/upmsp/class-12th-exam-result-2022/query.htm',
@@ -345,6 +372,7 @@ export default TestData = [
         imageUrl: WB,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'http://wb-10th-result.indiaresults.com/wb/wbbse/madhyamik-pariksha-se-result-2022/query.htm',
             twelfth: 'http://wb-12th-result.indiaresults.com/wb/wbchse/class-12th-gen-new-old-scheme-exam-result-2022/query.htm',
@@ -356,6 +384,7 @@ export default TestData = [
         imageUrl: CBSE,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://resultsarchives.nic.in/cbseresults/cbseresults2022/class-tenth/class10th22Compart.htm',
             twelfth: 'https://resultsarchives.nic.in/cbseresults/cbseresults2022/class-twelfth/Class12th22Compart.htm',
@@ -367,6 +396,7 @@ export default TestData = [
         imageUrl: ISC,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -378,6 +408,7 @@ export default TestData = [
         imageUrl: JK,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -389,6 +420,7 @@ export default TestData = [
         imageUrl: NIOS,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
@@ -400,6 +432,7 @@ export default TestData = [
         imageUrl: RSOS,
         link: '#',
         date: '01/03/2024',
+        isNew: false,
         resultWebsiteLink: {
             tenth: 'https://www.npmjs.com/',
             twelfth: 'https://www.npmjs.com/products/pro',
