@@ -5,12 +5,12 @@ import {
   Image,
   StyleSheet,
   TouchableHighlight,
+  TouchableOpacity,
   SafeAreaView,
   StatusBar,
   FlatList,
   TextInput,
 } from 'react-native';
-import statesData from '../assets/HomeCard';
 import TestData from '../assets/test1';
 import newGif from '../assets/new.gif';
 
@@ -38,6 +38,16 @@ function CardBoards({ navigation }) {
       </View>
       <FlatList
         data={sortedData}
+        ListEmptyComponent={() => (
+          <View style={style.noResultContainer}>
+            <Text style={style.noResultText}>Not available</Text>
+            <Text style={style.noResultText}>Please tell me what you're looking for!</Text>
+            <TouchableOpacity style={style.buttonContainer}>
+              <Text style={style.buttonText}>Send me your query!❤️</Text>
+            </TouchableOpacity>
+
+          </View>
+        )}
         renderItem={({ item, index }) => (
           <View>
             <View key={index}>
@@ -127,7 +137,30 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 15,
   },
-
+  noResultContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  noResultText: {
+    fontSize: 18,
+    color: 'red',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  buttonContainer: {
+    backgroundColor: 'blue',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
 export default CardBoards;
