@@ -1,11 +1,24 @@
-# Sample Snack app
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+# Amazon Clone
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+Amazon Clone Application using React native Expo.
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## Installation
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+Install my-project with npm
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+```bash
+  npm install
+```
+
+```bash
+  npx expo
+```
+    
+## ScreenShots
+![11 (1)](https://github.com/VipanKumar01/BoardResults_Expo/assets/108624219/ffcaae79-8fb9-41e1-a32b-cc4cd3dc5485)
+![22 (1)](https://github.com/VipanKumar01/BoardResults_Expo/assets/108624219/53bca570-960f-4d4c-b6a7-224de21d4eb6)
+![33 (1)](https://github.com/VipanKumar01/BoardResults_Expo/assets/108624219/5190c10e-281c-4804-819d-e43920bbe26a)
+![44 (1)](https://github.com/VipanKumar01/BoardResults_Expo/assets/108624219/fcb54333-5f90-4188-a6b1-afe7f76b1e5c)
+![55 (1)](https://github.com/VipanKumar01/BoardResults_Expo/assets/108624219/4d70e5aa-581e-42ff-a9fa-07b2520a9ae8)
+
