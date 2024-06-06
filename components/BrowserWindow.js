@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { WebView } from 'react-native-webview';
 import { SafeAreaView, ActivityIndicator, View, StyleSheet } from 'react-native';
 
-function BrowserWindow({ route }) {
+function BrowserWindow(props) {
   const [isLoading, setIsLoading] = useState(true);
+  const webViewRef = React.useRef(null);
+
+  // console.log(props.route.params);
+
 
   const onLoadStart = () => {
     setIsLoading(true); // Show the loader when the WebView starts loading
@@ -16,7 +20,8 @@ function BrowserWindow({ route }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <WebView
-        source={{ uri: route.params }}
+        ref={webViewRef}
+        source={{ uri: props.route.params }}
         style={{ flex: 1 }}
         onLoadStart={onLoadStart}
         onLoadEnd={onLoadEnd}
