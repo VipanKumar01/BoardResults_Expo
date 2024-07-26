@@ -1,5 +1,5 @@
 
-# Amazon Clone
+# All Board Result
 
 Amazon Clone Application using React native Expo.
 
