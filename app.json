@@ -1,7 +1,6 @@
 {
   "expo": {
-    "name": "board_results",
-    "slug": "snack-a2b5057d-94df-4e38-84e1-48ebb2003161",
+    "name": "All Board Results",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,7 +10,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,14 +20,14 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "package": "com.vipankumar01.snacka2b5057d94df4e3884e148ebb2003161"
+      "package": "com.vipangla.allboardresults"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "b7569a41-94b7-4591-ba2c-6cf77a54f7c9"
+        "projectId": "d4895b53-3162-468e-b720-c08174a61fcf"
       }
     }
   }

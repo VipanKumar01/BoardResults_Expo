@@ -1,177 +1,255 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Text,
   View,
   Image,
   StyleSheet,
-  TouchableHighlight,
   TouchableOpacity,
   SafeAreaView,
-  StatusBar,
   FlatList,
   TextInput,
-  ActivityIndicator, // Added ActivityIndicator import
-  Linking
+  ActivityIndicator,
+  Linking,
+  Animated,
+  useWindowDimensions,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import newGif from '../assets/images/new.gif';
 import { FetchCollection } from '../API/FirebaseAPI';
+import { debounce } from 'lodash';
+
+const COLORS = {
+  primary: '#2979ff',
+  background: '#f0f0f0',
+  card: '#FFFFFF',
+  text: '#333333',
+  subText: '#666666',
+};
 
 function CardBoards({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [fetchedData, setFetchedData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
+  const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [error, setError] = useState(null);
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = async (refresh = false) => {
+    if (refresh) setIsRefreshing(true);
+    setError(null);
     try {
       const response = await FetchCollection();
       setFetchedData(response);
-      setSortedData(response); // Initialize sortedData with fetchedData
-      setIsLoading(false); // Set loading state to false once data is fetched
+      setSortedData(response);
     } catch (error) {
-      // Handle error
+      console.error('Error fetching data:', error);
+      setError('Failed to fetch data. Please try again.');
+    } finally {
+      setIsLoading(false);
+      setIsRefreshing(false);
     }
   };
 
-  const handleSearch = (text) => {
-    const filteredData = fetchedData.filter((item) =>
-      item.name.toLowerCase().includes(text.toLowerCase())
-    );
-    setSortedData(filteredData);
+  const handleSearch = useCallback(
+    debounce((text) => {
+      const filteredData = fetchedData.filter((item) =>
+        item.name.toLowerCase().includes(text.toLowerCase())
+      );
+      setSortedData(filteredData);
+    }, 300),
+    [fetchedData]
+  );
+
+  const onSearchChange = (text) => {
     setSearchQuery(text);
+    handleSearch(text);
   };
 
-  return (
-    <SafeAreaView style={style.safeAreacontainer}>
-      {/* Display loading indicator when isLoading is true */}
-      {isLoading ? (
-        <View style={style.loadingContainer}>
-          <ActivityIndicator size="large" color="#2979ff" />
-        </View>
-      ) : (
-        <>
-          <View style={style.searchContainer}>
-            <TextInput
-              style={style.searchInput}
-              placeholder="Search by Board name"
-              value={searchQuery}
-              onChangeText={handleSearch}
-            />
+  const renderCard = ({ item }) => (
+    <TouchableOpacity
+      style={styles.cardContainer}
+      onPress={() => navigation.navigate('Check Result', item)}
+      activeOpacity={0.7}
+    >
+      <View style={styles.cardContent}>
+        <Image source={{ uri: item.imageUrl }} style={styles.imgStyle} />
+        <View style={styles.contentStyle}>
+          <View style={styles.titleRow}>
+            <Text style={styles.titleStyle}>{item.name}</Text>
+            {item.isNew && <Image source={newGif} style={styles.newGif} />}
           </View>
-          <FlatList
-            data={sortedData}
-            ListEmptyComponent={() => (
-              searchQuery !== '' && sortedData.length === 0 ? (
-                <View style={style.noResultContainer}>
-                  <Text style={style.noResultText}>Not available</Text>
-                  <Text style={style.noResultText}>Please tell me what you're looking for!</Text>
-                  <TouchableOpacity
-                    style={style.buttonContainer}
-                    onPress={() => {
-                      Linking.openURL('mailto:vipankumar7607@gmail.com?subject=Query');
-                    }}
-                  >
-                    <Text style={style.buttonText}>Send your query!❤️</Text>
-                  </TouchableOpacity>
-                </View>
-              ) : null
-            )}
-            renderItem={({ item, index }) => (
-              <View>
-                <View key={index}>
-                  <View style={style.container}>
-                    <View style={{ flexDirection: 'row' }}>
-                      <Image source={{ uri: item.imageUrl }} style={style.imgStyle} />
-                      <View style={style.contentStyle}>
-                        <View style={style.titleRow}>
-                          <Text style={style.titleStyle}>{item.name}</Text>
-                          {item.isNew ? <Image source={newGif} style={style.newGif} /> : <Text></Text>}
-                        </View>
-                        <Text style={style.dateStyle}>Date - {item.releaseDate}</Text>
-                      </View>
-                    </View>
-                    <TouchableHighlight
-                      style={style.touchableStyle}
-                      onPress={() => navigation.navigate('Check Result', item)}
-                    >
-                      <Text style={{ color: 'white' }}>Open</Text>
-                    </TouchableHighlight>
-                  </View>
-                  <View
-                    style={{
-                      borderBottomWidth: 1,
-                      borderBottomColor: '#666',
-                    }}
-                  ></View>
-                </View>
-              </View>
-            )}
-          />
-        </>
-      )}
+          <Text style={styles.dateStyle}>Date - {item.releaseDate}</Text>
+        </View>
+      </View>
+      <View style={styles.openButton}>
+        <Text style={styles.openButtonText}>Open</Text>
+        <Ionicons name="arrow-forward" size={16} color={COLORS.card} />
+      </View>
+    </TouchableOpacity>
+  );
+
+  const ListEmptyComponent = () => (
+    searchQuery !== '' && sortedData.length === 0 ? (
+      <View style={styles.noResultContainer}>
+        <Text style={styles.noResultText}>Not available</Text>
+        <Text style={styles.noResultText}>Please tell me what you're looking for!</Text>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            Linking.openURL('mailto:vipankumar7607@gmail.com?subject=Query');
+          }}
+        >
+          <Text style={styles.buttonText}>Send your query!❤️</Text>
+        </TouchableOpacity>
+      </View>
+    ) : null
+  );
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={() => fetchData()}>
+          <Text style={styles.retryButtonText}>Retry</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  return (
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <View style={styles.searchContainer}>
+        <Ionicons name="search" size={20} color={COLORS.subText} style={styles.searchIcon} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search by Board name"
+          value={searchQuery}
+          onChangeText={onSearchChange}
+        />
+        {searchQuery !== '' && (
+          <TouchableOpacity onPress={() => onSearchChange('')}>
+            <Ionicons name="close-circle" size={20} color={COLORS.subText} />
+          </TouchableOpacity>
+        )}
+      </View>
+      <FlatList
+        data={sortedData}
+        renderItem={renderCard}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.listContainer}
+        ListEmptyComponent={ListEmptyComponent}
+        numColumns={width > 600 ? 2 : 1}
+        refreshing={isRefreshing}
+        onRefresh={() => fetchData(true)}
+      />
     </SafeAreaView>
   );
 }
 
-const style = StyleSheet.create({
-  safeAreacontainer: {
+const styles = StyleSheet.create({
+  safeAreaContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
   },
   searchContainer: {
-    padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.card,
+    borderRadius: 25,
+    margin: 10,
+    paddingHorizontal: 15,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  searchIcon: {
+    marginRight: 10,
   },
   searchInput: {
-    height: 40,
-    borderWidth: 1,
-    borderColor: '#2979ff',
-    borderRadius: 50,
-    paddingHorizontal: 10,
+    flex: 1,
+    height: 50,
+    fontSize: 16,
   },
-  touchableStyle: {
-    backgroundColor: '#e91e63',
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
+  listContainer: {
     padding: 10,
-    height: 40,
   },
-  container: {
-    backgroundColor: '#fff',
+  cardContainer: {
+    backgroundColor: COLORS.card,
+    borderRadius: 15,
+    marginBottom: 15,
+    overflow: 'hidden',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    flex: 1,
+    margin: 5,
+  },
+  cardContent: {
     flexDirection: 'row',
-    padding: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
-    position: 'relative',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    padding: 15,
   },
   imgStyle: {
     width: 75,
     height: 75,
-    borderRadius: 50,
-  },
-  titleRow: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  titleStyle: {
-    color: '#111',
-    fontWeight: '900',
-    fontSize: 20,
-  },
-  dateStyle: {
-    color: '#111',
-    fontSize: 15,
+    borderRadius: 37.5,
   },
   contentStyle: {
-    justifyContent: 'center',
+    flex: 1,
     marginLeft: 15,
+    justifyContent: 'center',
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  titleStyle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: COLORS.text,
+    marginRight: 10,
+  },
+  newGif: {
+    width: 30,
+    height: 15,
+  },
+  dateStyle: {
+    fontSize: 14,
+    color: COLORS.subText,
+  },
+  openButton: {
+    backgroundColor: COLORS.primary,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
+  openButtonText: {
+    color: COLORS.card,
+    fontWeight: 'bold',
+    marginRight: 5,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   noResultContainer: {
     flex: 1,
@@ -186,21 +264,40 @@ const style = StyleSheet.create({
     textAlign: 'center',
   },
   buttonContainer: {
-    backgroundColor: 'blue',
-    borderRadius: 8,
+    backgroundColor: COLORS.primary,
+    borderRadius: 25,
     paddingVertical: 12,
     paddingHorizontal: 20,
+    marginTop: 20,
   },
   buttonText: {
-    color: 'white',
-    fontSize: 18,
+    color: COLORS.card,
+    fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  loadingContainer: { // New style for loading indicator container
+  errorContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'red',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  retryButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+  },
+  retryButtonText: {
+    color: COLORS.card,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
