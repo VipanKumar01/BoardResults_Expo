@@ -1,12 +1,11 @@
-# AI Interview Application
+# All Board Results
 
-A React Native application built with Expo, designed to assist in preparing for AI-based interviews.
+A React Native application built with Expo, designed to check your Result of any board at one place.
 
 ## Features
 
 - **User-Friendly Interface**: Simple and intuitive design for easy navigation.
-- **Interview Questions Preparation**: Tailored content to help you prepare for AI-based interviews Questions.
-- **Interactive Experience**: Engage with the application to simulate real interview Questions.
+- **All Board Results**: Find Every Government and private board Result Declaration at one app.
 
 ## Installation
 
@@ -15,13 +14,13 @@ To get started with the AI Interview Application, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/VipanKumar01/Interview-Prep.git
+    git clone https://github.com/VipanKumar01/BoardResults_Expo.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd Interview-Prep
+    cd BoardResults_Expo
     ```
 
 3. Install the required dependencies:
@@ -36,11 +35,6 @@ To get started with the AI Interview Application, follow these steps:
     npx expo start
     ```
 
-## Usage
-
-- **Start the App**: Use the Expo app on your mobile device to scan the QR code generated after running `npx expo start`.
-- **Explore Features**: Navigate through the app to access interview preparation resources.
-- **Practice Interviews**: Utilize the interactive features to simulate AI interview scenarios.
 
 ## Contributing
 
