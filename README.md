@@ -9,7 +9,7 @@ A React Native application built with Expo, designed to check your Result of any
 
 ## Installation
 
-To get started with the AI Interview Application, follow these steps:
+To get started with the Find your result in this application Application, follow these steps:
 
 1. Clone the repository:
 
